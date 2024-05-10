@@ -15,9 +15,14 @@ app.set("view engine", "ejs");
 //dynamic routing
 app.get("/", function (req, res) {
   fs.readdir(`./files`, function (err, files) {
+    if (err) {
+      console.error("Error reading files:", err);
+      return res.status(500).send("Error reading files");
+    }
     res.render("index", { files: files });
   });
 });
+
 
 app.get("/file/:filename", function (req, res) {
   fs.readFile(
