@@ -13,16 +13,15 @@ app.set("view engine", "ejs");
 //middleware finished
 
 //dynamic routing
-app.get("/", function (req, res) {
+app.get("/todo", function (req, res) {
   fs.readdir(`./files`, function (err, files) {
-    if (err) {
-      console.error("Error reading files:", err);
-      return res.status(500).send("Error reading files");
-    }
-    res.render("index", { files: files });
+    res.render("todo", { files: files });
   });
 });
 
+app.get("/", function (req, res) {
+  res.render("index");
+});
 
 app.get("/file/:filename", function (req, res) {
   fs.readFile(
@@ -46,7 +45,7 @@ app.post("/edit", function (req, res) {
     `./files/${req.body.previous}`,
     `./files/${req.body.new}`,
     function (err) {
-      res.redirect("/");
+      res.redirect("/todo");
     }
   );
 });
@@ -56,7 +55,7 @@ app.post("/create", function (req, res) {
     `./files/${req.body.title.split("").join("")}.txt`,
     req.body.details,
     function (err) {
-      res.redirect("/");
+      res.redirect("/todo");
     }
   );
 });
