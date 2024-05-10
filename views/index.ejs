@@ -7,53 +7,108 @@
     <title>Home</title>
     <link rel="stylesheet" href="/stylesheets/style.css">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
 
 </head>
 
-<body>
+<body class="bg-zinc-800">
     <nav class="flex justify-center bg-zinc-900 space-x-9">
-        <a href="/dashboard"
-            class="font-bol px-3 py-2 text-slate-700 rounded-lg hover:bg-slate-100 hover:text-slate-900">Home</a>
-        <a href="/team"
-            class="font-bol px-3 py-2 text-slate-700 rounded-lg hover:bg-slate-100 hover:text-slate-900">Team</a>
-        <a href="/projects"
-            class="font-bol px-3 py-2 text-slate-700 rounded-lg hover:bg-slate-100 hover:text-slate-900">Projects</a>
-        <a href="/reports"
-            class="font-bol px-3 py-2 text-slate-700 rounded-lg hover:bg-slate-100 hover:text-slate-900">Reports</a>
+        <a style="color: rgb(158, 158, 22);" href="/"
+            class="font-bold px-3 py-2 text-slate-700 rounded-lg hover:bg-slate-100 hover:text-slate-900">Home</a>
+        <a href="/todo"
+            class="font-bold px-3 py-2 text-slate-700 rounded-lg hover:bg-slate-100 hover:text-slate-900">Projects</a>
     </nav>
-    <div class="bg-zinc-800">
-        <br>
-        <h2 style="font-size: 2em;" align="center">Sticky e-notes</h2>
-    </div>
-    <div class="main w-full min-h-screen bg-zinc-800">
-        <div class="form p-10">
-            <form action="/create" method="post">
-                <input class="block w-full rounded-md px-5 py-2 bg-zinc-900" type="text" name="title" id=""
-                    placeholder="Title Gose here">
-                <textarea class="block w-full rounded-md mt-2 px-5 py-2 resize-none bg-zinc-900" name="details" id=""
-                    placeholder="Description Here" cols="30" rows="10"></textarea>
-                <input type="submit" class="mt-2 bg-yellow-600 px-5 py-2 rounded-md" value="Create task">
-            </form>
-        </div>
+    <div class="bg-zinc-800 flex flex-col lg:flex-row items-center justify-between p-8">
+        <div class="lg:w-1/2 mb-8 lg:mb-0">
+            <h2 class="text-3xl font-bold">About Me</h2>
+            <div class="mt-4">
 
-        <div class="tasks flex flex-wrap gap-3 p-10 justify-center">
-            <% if(files.length> 0) { %>
-                <% files.forEach(function(val){ %>
-                    <div class="task w-72 px-3 py-4 bg-zinc-700 rounded-md">
-                        <h2 class="text-white text-3xl tracking-tighter">
-                            <%= val %>
-                        </h2>
-                        <div class="flex w-full justify-between item-center mt-3">
-                            <a href="/file/<%= val %>" class="text-blue-600 inline-block">Read More...</a>
-                            <a class="text-green-600" href="/edit/<%= val %>">Edit Filename</a>
-                        </div>
+                <p class="text-lg">I'm passionate about creating innovative WebApp With Beautiful Ui and Backend. With a
+                    strong background in BCA & MCA At Charusat University, I strive to make a positive impact through
+                    technology.</p>
+
+                <br>
+                <hr>
+                <br>
+                <h1>Education</h1>
+                <div class="mt-5">
+
+                    <ul class="list-disc ml-6">
+
+                        <li><span class="fa fa-graduation-cap text-green-400 pr-2"></span>Bachelor Of Computer
+                            Applications - Charusat University (2020-2023)</li>
+                        <li><span class="fa fa-graduation-cap text-green-400 pr-2"></span>Masters of Computer
+                            Application - Charusat University (2023-2025)</li>
+
+
+                    </ul>
+                </div>
+                <br>
+                <hr>
+                <br>
+                <h1>Skills</h1>
+                <div class="mt-5 flex">
+                    <div class="w-1/2">
+                        <span class="fa fa-code text-blue-400 pr-2"></span>
+                        <strong>Frontend:</strong>
+                        <ul class="list-disc ml-6 mt-2">
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>JavaScript</li>
+                            <li>Bootstrap</li>
+                            <li>Tailwind</li>
+                            <!-- Add more frontend skills here -->
+                        </ul>
                     </div>
-                    <% }) %>
-                        <%} else { %>
-                            <h3> No Tasks Yet ! Create Some Tasks...</h3>
-                            <% }%>
+                    <div class="w-1/2">
+                        <span class="fa fa-server text-purple-400 pr-2"></span>
+                        <strong>Backend:</strong>
+                        <ul class="list-disc ml-6 mt-2">
+                            <li>Node.js</li>
+                            <li>Express.js</li>
+                            <li>MongoDB</li>
+                            <li>PHP</li>
+                            <!-- Add more backend skills here -->
+                        </ul>
+                    </div>
+                </div>
+
+
+            </div>
+            <br>
+            <hr>
+            <br>
+            <h1 style="color: rgb(0, 162, 40);">Connect With Me ?</h1>
+            <div class="mt-5 flex space-x-4">
+                <a href="https://www.linkedin.com/in/krunal-mistry-21359a229?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                    class="flex items-center bg-purple-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"><i
+                        class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/krunal013"
+                    class="flex items-center bg-gray-500 text-white px-4 py-2 rounded-md hover:bg-dark-600"><i
+                        class="fab fa-github"></i></a>
+                <a href="https://unsplash.com/@krunal_km"
+                    class="flex items-center bg-green-500 text-white px-4 py-2 rounded-md hover:bg-white-600"><i
+                        class="fab fa-unsplash"></i></a>
+                <a href="https://www.instagram.com/krunal.km?igsh=aDNpbjJmM3R4eHV5"
+                    class="flex items-center bg-pink-500 text-white px-4 py-2 rounded-md hover:bg-red-600"><i
+                        class="fab fa-instagram"></i></a>
+
+                <a href="https://www.facebook.com/krunal.mistry.3975?mibextid=ZbWKwL"
+                    class="flex items-center bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"><i
+                        class="fab fa-facebook"></i></a>
+
+            </div>
+
+        </div>
+        <div class="lg:w-1/3 order-first lg:order-last">
+            <div class="rounded-full bg-gray-300 w-100 h-100 mx-auto lg:mx-0">
+                <img class="rounded-full w-full h-full object-cover"
+                    src="https://media.licdn.com/dms/image/D4D03AQFGWLtqhHIg2A/profile-displayphoto-shrink_400_400/0/1667329199862?e=1720656000&v=beta&t=CnwdqYjGIjsL6LuP57uDRHGUQSrQDBFIk7IA0I6AD5A"
+                    alt="Krunal Image" />
+            </div>
         </div>
     </div>
+
 </body>
 
 </html>
